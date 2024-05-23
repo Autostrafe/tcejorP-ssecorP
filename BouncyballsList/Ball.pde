@@ -1,4 +1,5 @@
 
+
 class Ball{
     int x,y,r; //Declaring position and radius variables
     int cRed,cGreen,cBlue;
@@ -15,8 +16,9 @@ class Ball{
         cGreen = int (random(0,255));
         cBlue = int (random(0,255));
 
-        dx = int(random.randInt(-10,10));
-        dy = int(random.randInt(-10,10));
+        dx = int( random(-10,10));
+        dy = int( random(-10,10));
+
     }
 
     void display(){
@@ -27,6 +29,14 @@ class Ball{
     void move(){
         x = x+dx;
         y = y+dy;
+
+        if (x <= 0 or x >= ){
+            dx = dx * -1;
+        }
+
+        if (y <= 0 or y >= ){
+            dy = dy * -1;
+        }
     }
 
 }
