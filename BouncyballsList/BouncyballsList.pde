@@ -8,14 +8,24 @@ void setup() {
 void draw() {
     background(52,2,150);
     
-    for (int i = 0; i< ballGroup.size(); i++){
-        ballGroup.get(i).display();
-        ballGroup.get(i).move();
 
+
+    for (Ball theBall : ballGroup){
+        theBall.move();
+        for (Ball otherBall : ballGroup){
+            if(theBall != otherBall){
+                theBall.checkCollision(otherBall);
+            }
+            
+        }
+        
+        theBall.display();
+        
     }
+
 
 }
 
 void mousePressed(){
-    ballGroup.add(new Ball(mouseX, mouseY, 100));
+    ballGroup.add(new Ball(mouseX, mouseY, 100, width, height));
 }
